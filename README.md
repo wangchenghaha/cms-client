@@ -1,4 +1,4 @@
-# flutter_demo
+# cms_client
 
 A new Flutter project.
 
