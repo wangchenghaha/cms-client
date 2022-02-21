@@ -35,6 +35,13 @@ class PageContent extends StatelessWidget {
             },
             child: const Text('不存在的页面'),
           ),
+          ElevatedButton(
+            style: style,
+            onPressed: (){
+              Navigator.pushNamed(context, '/room/1111');
+            },
+            child: const Text('房屋详情页，id: 1111'),
+          ),
       ],),
     );
   }
