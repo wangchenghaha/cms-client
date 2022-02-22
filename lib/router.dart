@@ -10,12 +10,14 @@ class Routes {
   static String home = '/';
   static String login = '/login';
   static String roomDetail = '/room/:roomId';
+  static String cart = '/cart';
 
   // 编写函数 configureRoutes 关联路由名称和处理函数
   static void configureRoutes(FluroRouter router) {
     router.define(home, handler: homeHandler);
     router.define(login, handler: loginHandler);
     router.define(roomDetail, handler: RoomDetailHandler);
+    router.define(cart, handler: CartHandler);
     router.notFoundHandler = NotFoundHandler;
   }
 }
