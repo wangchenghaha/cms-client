@@ -66,4 +66,4 @@ flutter:
   assets:
     - assets/images/Rectangle.png
     - assets/images/loadbg.png
-    # - assets/images/valideCode.png
+    - assets/images/valideCode.png
