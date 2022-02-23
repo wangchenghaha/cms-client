@@ -18,6 +18,10 @@ var homeHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
   return const HomePage();
 });
+var productHandler = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  return const HomePage();
+});
 Handler CartHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
   return const Cart();
