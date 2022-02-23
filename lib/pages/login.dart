@@ -1,11 +1,85 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
+import 'package:cms_client/utils/string_is_null_or_empty.dart';
+import 'package:cms_client/widgets/common_toast.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:cms_client/router.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  var usernameController = TextEditingController();
+  var passwordController = TextEditingController();
+  var captchaController = TextEditingController();
+  String uuid = '';
+  String clientId = '1';
+  late Uint8List bytes;
+
+  _getCaptcha() async {
+    const url = "https://cms-test.bestseller.com.cn/stage-api/code";
+    var res = await Dio().get(url);
+    if (res.data['code'] == 200) {
+      setState(() {
+        // 将String转换成Uint8List格式
+        bytes = Base64Decoder().convert(res.data['img']);
+        uuid = res.data['uuid'];
+      });
+    }
+  }
+
+  _login() async {
+    const url = "https://cms-test.bestseller.com.cn/stage-api/auth/login";
+    var username = usernameController.text;
+    print(username);
+    var password = passwordController.text;
+    print(password);
+    var code = captchaController.text;
+    print(code);
+    print(uuid);
+    if(stringIsNullOrEmpty(username) || stringIsNullOrEmpty(password)){
+      CommontToast.showToast('请输入用户名或密码！');
+      return;
+    }
+    if(stringIsNullOrEmpty(code)){
+      CommontToast.showToast('请输入验证码！');
+      return;
+    }
+    var data = FormData.fromMap({
+      'username': username,
+      'password': password,
+      'uuid': uuid,
+      'code': code,
+      'clientId': clientId,
+      'version': "0.0.33"
+    });
+    var res = await Dio().post(url, data: data);
+    print(res.data);
+    print(res.data['msg']);
+    if (res.data['code'] == 200) {
+      print(res.data['img'].toString());
+      Navigator.pushNamed(context, Routes.home);
+    }else{
+      CommontToast.showToast(res.data['msg']);
+    }
+  }
+
+  @override
+  void initState() {
+    print('count initState');
+    _getCaptcha();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    print('count build');
+
     return Scaffold(
       body: Container(
         child: Container(
@@ -65,7 +139,8 @@ class LoginPage extends StatelessWidget {
                                     size: 20),
                               ),
                               Expanded(
-                                  child: TextFormField(
+                                  child: TextField(
+                                controller: usernameController,
                                 style: TextStyle(
                                   fontSize: 14,
                                 ),
@@ -97,7 +172,8 @@ class LoginPage extends StatelessWidget {
                                     size: 20),
                               ),
                               Expanded(
-                                  child: TextFormField(
+                                  child: TextField(
+                                controller: passwordController,
                                 style: const TextStyle(
                                   fontSize: 14,
                                 ),
@@ -129,7 +205,8 @@ class LoginPage extends StatelessWidget {
                                     size: 20),
                               ),
                               Expanded(
-                                  child: TextFormField(
+                                  child: TextField(
+                                controller: captchaController,
                                 style: const TextStyle(
                                   fontSize: 14,
                                 ),
@@ -146,16 +223,19 @@ class LoginPage extends StatelessWidget {
                                 ),
                                 obscureText: false,
                               )),
-                              Container(
+                              GestureDetector(
+                                child: Container(
                                   width: 100,
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          "assets/images/valideCode.png"),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  )),
+                                  height: 40,
+                                  child: Image.memory(
+                                    bytes,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                onTap: () {
+                                  _getCaptcha();
+                                },
+                              ),
                             ],
                           ),
                           const SizedBox(
@@ -196,9 +276,9 @@ class LoginPage extends StatelessWidget {
                                   ],
                                 )),
                             onTap: () {
-                              Navigator.pushNamed(context, Routes.home);
+                              _login();
                             },
-                          )
+                          ),
                         ],
                       )),
                 ],

@@ -30,7 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   fluro: ^2.0.3
-  dio: ^3.0.9
+  dio: ^4.0.4
   fluttertoast: ^8.0.8
 
 
