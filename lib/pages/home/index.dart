@@ -17,10 +17,10 @@ List<Widget> tabViewList = [
 ];
 
 List<BottomNavigationBarItem> barItemList = [
-  const BottomNavigationBarItem(label: '首页', icon: Icon(Icons.home)),
-  const BottomNavigationBarItem(label: '商品', icon: Icon(Icons.beach_access)),
-  const BottomNavigationBarItem(label: '达人', icon: Icon(Icons.beach_access)),
-  const BottomNavigationBarItem(label: '素材库', icon: Icon(Icons.beach_access)),
+  const BottomNavigationBarItem(label: '待办', icon: Icon(Icons.list_alt_outlined)),
+  const BottomNavigationBarItem(label: '商品', icon: Icon(Icons.badge_outlined)),
+  const BottomNavigationBarItem(label: '达人', icon: Icon(Icons.diamond_rounded)),
+  const BottomNavigationBarItem(label: '素材库', icon: Icon(Icons.layers)),
   const BottomNavigationBarItem(label: '我的', icon: Icon(Icons.account_circle)),
 ];
 
