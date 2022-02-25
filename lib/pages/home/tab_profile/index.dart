@@ -12,9 +12,6 @@ class TabProfile extends StatefulWidget {
 class _TabProfileState extends State<TabProfile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('我的'),),
-      body: const Text('这是我的！'),
-    );
+    return PageContent(name: '我的');
   }
 }

@@ -11,7 +11,7 @@ class TabIndex extends StatefulWidget {
 }
 
 class _TabIndexState extends State<TabIndex> {
-  List<DataListItemData> _todoDataList = [];
+  List<DataListItemData> _todoDataList;
   _getTotoList() async {
     var url =
         'https://cms-test.bestseller.com.cn/stage-api/product/product/stepNumber';
@@ -22,7 +22,6 @@ class _TabIndexState extends State<TabIndex> {
     var res = await Dio().get(url, options: options);
     if (res.data['code'] == 200) {
       setState(() {
-        print('--===---');
         List _todoDataList = (res.data['data'] as List<dynamic>)
         .map((item) => DataListItemData.fromJson(item))
         .toList();
