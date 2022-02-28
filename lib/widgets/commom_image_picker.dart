@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CommonImagePicker extends StatefulWidget {
-  const CommonImagePicker({Key? key}) : super(key: key);
+  final Title;
+
+  const CommonImagePicker(this.Title, {Key? key}) : super(key: key);
 
   @override
   State<CommonImagePicker> createState() => _CommonImagePickerState();
@@ -16,33 +18,44 @@ class _CommonImagePickerState extends State<CommonImagePicker> {
     var ImageWidth = (MediaQuery.of(context).size.width - 30.0) / 2;
     var ImageHeight = ImageWidth * 213 / 160;
     if (_imgPath == null) {
-      return GestureDetector(
-          onTap: () {
-            _openGallery();
-          },
-          child: Container(
-            color: Colors.black12,
-            width: ImageWidth,
-            height: ImageHeight,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints.expand(),
-              child: Stack(
-                alignment: Alignment.center,
-                children: const [
-                  Positioned(
-                      child: Center(
-                    child: Icon(Icons.perm_identity,
-                        color: Colors.black45, size: 60),
-                  )),
-                  Positioned(
-                      child: Center(
-                    child: Icon(Icons.photo_camera,
-                        color: Colors.blue, size: 20),
-                  ))
-                ],
+      return Column(
+        children: [
+          GestureDetector(
+            onTap: () {
+              _openGallery();
+            },
+            child: Container(
+              color: Colors.black12,
+              width: ImageWidth,
+              height: ImageHeight,
+              child: ConstrainedBox(
+                constraints: const BoxConstraints.expand(),
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: const [
+                    Positioned(
+                        child: Center(
+                      child: Icon(Icons.perm_identity,
+                          color: Colors.black12, size: 100,
+                          ),
+                    )),
+                    Positioned(
+                        child: Center(
+                      child: Icon(Icons.photo_camera,
+                          color: Colors.blue, size: 40),
+                    ))
+                  ],
+                ),
               ),
-            ),
-          ));
+            )),
+          Container(
+            width: ImageWidth,
+            padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+            alignment: Alignment.center,
+            child: Text(widget.Title),
+          )
+        ],
+      );
     } else {
       return Container(
         width: ImageWidth,

@@ -14,6 +14,7 @@ class Routes {
   // 达人
   static String powerAttorney = '/pages/home/tab_daren/power_attorney';
   static String applicationSubmit = '/pages/home/tab_daren/application_submit';
+  static String applicationSubmitSuccess = '/pages/home/tab_daren/application_submit_success';
 
   // 编写函数 configureRoutes 关联路由名称和处理函数
   static void configureRoutes(FluroRouter router) {
@@ -23,6 +24,7 @@ class Routes {
     router.define(cart, handler: CartHandler);
     router.define(powerAttorney, handler: PowerAttorneyHandler);
     router.define(applicationSubmit, handler: ApplicationSubmitHandler);
+    router.define(applicationSubmitSuccess, handler: ApplicationSubmitSuccessHandler);
     router.notFoundHandler = NotFoundHandler;
   }
 }

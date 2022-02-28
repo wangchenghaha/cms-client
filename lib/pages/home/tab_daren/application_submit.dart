@@ -1,16 +1,31 @@
+import 'package:cms_client/router.dart';
+import 'package:cms_client/widgets/CommonFloatingButton.dart';
 import 'package:cms_client/widgets/commom_image_picker.dart';
 import 'package:cms_client/widgets/common_text.dart';
 import 'package:flutter/material.dart';
 
-class ApplicationSubmitPage extends StatelessWidget {
+class ApplicationSubmitPage extends StatefulWidget {
   const ApplicationSubmitPage({Key? key}) : super(key: key);
+  @override
+  State<ApplicationSubmitPage> createState() => _ApplicationSubmitPageState();
+}
 
+class _ApplicationSubmitPageState extends State<ApplicationSubmitPage> {
+  var isActive = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('申请达人'),
       ),
+      floatingActionButton: isActive
+          ? CommonFloatingButton('提交', const Color.fromRGBO(158, 157, 255, 1),
+              Colors.white, (){
+                _submit;
+              })
+          : CommonFloatingButton('提交', const Color.fromRGBO(179, 187, 196, 1),
+              Colors.white, nullFun),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: Container(
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 50),
         child: Column(
@@ -52,8 +67,8 @@ class ApplicationSubmitPage extends StatelessWidget {
                   spacing: 10.0,
                   runSpacing: 10.0,
                   children: const [
-                    CommonImagePicker(),
-                    CommonImagePicker()
+                    CommonImagePicker('正面照'),
+                    CommonImagePicker('侧面照')
                   ],
                 )
               ],
@@ -62,5 +77,11 @@ class ApplicationSubmitPage extends StatelessWidget {
         ),
       ),
     );
+  }
+  Function nullFun = ()=>{
+
+  };
+  _submit (context) async{
+    Navigator.pushNamed(context, Routes.applicationSubmitSuccess);
   }
 }
