@@ -8,6 +8,10 @@ import 'package:cms_client/pages/cart.dart';
 import 'package:cms_client/pages/login.dart';
 import 'package:cms_client/pages/not_found.dart'; 
 import 'package:cms_client/pages/roomDetail.dart'; 
+// 达人
+import 'package:cms_client/pages/home/tab_daren/power_attorney.dart';
+import 'package:cms_client/pages/home/tab_daren/application_submit.dart';
+
  
 // 定义路由处理函数
 Handler NotFoundHandler = Handler(
@@ -34,4 +38,14 @@ Handler loginHandler = Handler(
 Handler RoomDetailHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, dynamic> params) {
     return RoomDetailPage(roomId: params['roomId'][0],);
+});
+
+Handler PowerAttorneyHandler = Handler(
+  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return const PowerAttorneyPage();
+});
+
+Handler ApplicationSubmitHandler = Handler(
+  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return const ApplicationSubmitPage();
 });

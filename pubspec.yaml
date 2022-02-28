@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.2
   json_annotation: ^4.4.0
+  image_picker: ^0.8.4+10
 
 dev_dependencies:
   flutter_test:
@@ -86,7 +87,6 @@ flutter:
     - static/images/home_index_recommend_2.png
     - static/images/home_index_recommend_3.png
     - static/images/home_index_recommend_4.png
-    # - static/icons/widget_search_bar_map.png
     - static/images/home_profile_record.png
     - static/images/home_profile_order.png
     - static/images/home_profile_favor.png

@@ -10,12 +10,4 @@ class DataListItemData {
         this.productStepNameEn,
         this.productContentProductionStep,
         this.number);
-
-  DataListItemData.fromJson(Map<String, dynamic> json, this.productStepNameCn, this.productStepNameEn, this.productContentProductionStep, this.number) {
-    print(json);
-    productStepNameCn = json['productStepNameCn'];
-    productStepNameEn = json['productStepNameEn'];
-    productContentProductionStep = json['productContentProductionStep'];
-    number = json['number'];
-  }
 }

@@ -17,7 +17,6 @@ class RecommentItemWidget extends StatelessWidget {
             ],
           ),
           Image.asset(data.imgUrl),
-          Image(image: Image.asset(data.imgUrl))
         ],
       ),
     );
