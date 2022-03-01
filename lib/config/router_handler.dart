@@ -12,6 +12,7 @@ import 'package:cms_client/pages/roomDetail.dart';
 import 'package:cms_client/pages/home/tab_daren/power_attorney.dart';
 import 'package:cms_client/pages/home/tab_daren/application_submit.dart';
 import 'package:cms_client/pages/home/tab_daren/application_submit_success.dart';
+import 'package:cms_client/pages/home/tab_daren/task_list.dart';
 
  
 // 定义路由处理函数
@@ -53,4 +54,8 @@ Handler ApplicationSubmitHandler = Handler(
 Handler ApplicationSubmitSuccessHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
     return const ApplicationSubmitSuccessPage();
+});
+Handler TaskListHandler = Handler(
+  handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+    return const TaskListPage();
 });

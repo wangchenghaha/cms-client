@@ -7,9 +7,6 @@ class TabIndex extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('待办'),
-      ),
       body: Container(
         padding: const EdgeInsets.all(20),
         child: ListView(

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import './application.dart';
+import './daren_index.dart';
 
 class TabDaren extends StatefulWidget {
   const TabDaren({ Key? key }) : super(key: key);
@@ -10,12 +11,13 @@ class TabDaren extends StatefulWidget {
 }
 
 class _TabDarenState extends State<TabDaren> {
+  var isDaren = false;
   @override
   Widget build(BuildContext context) {
-    if(true){
-      return Application();
+    if(isDaren){
+      return DarenIndexPage();
     }else{
-      return Container();
+      return Application();
     }
   }
 }

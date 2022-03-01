@@ -24,7 +24,7 @@ class _ApplicationState extends State<Application> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(IconData(0xe707, fontFamily: 'Myfont'),
+                const Icon(IconData(0xe706, fontFamily: 'Myfont'),
                     color: Colors.blue, size: 124),
               ],
             ),
