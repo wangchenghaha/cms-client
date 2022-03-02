@@ -1,5 +1,6 @@
 import 'package:cms_client/pages/home/tab_daren/index.dart';
 import 'package:cms_client/pages/home/tab_material/index.dart';
+import 'package:cms_client/pages/image.dart';
 // import 'package:cms_client/pages/home/tab_product/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cms_client/pages/home/tab_todo/index.dart';
@@ -12,7 +13,9 @@ List<Widget> tabViewList = [
 
   // const TabProduct(),
   const TabDaren(),
-  const TabMaterial(),
+  const MyHomePage(title: 'Image Picker Example'),
+
+  // const TabMaterial(),
   const TabProfile(),
 ];
 

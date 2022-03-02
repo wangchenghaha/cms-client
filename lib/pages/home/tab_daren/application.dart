@@ -25,7 +25,7 @@ class _ApplicationState extends State<Application> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(IconData(0xe706, fontFamily: 'Myfont'),
-                    color: Colors.blue, size: 124),
+                    color: Color.fromRGBO(144, 142, 255, 1), size: 100),
               ],
             ),
             Container(

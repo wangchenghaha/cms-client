@@ -3,3 +3,7 @@ flutter_plugin_android_lifecycle=/Users/wangcheng/development/flutter/.pub-cache
 fluttertoast=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.8/
 image_picker=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.8.4+10/
 image_picker_for_web=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_for_web-2.1.6/
+video_player=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-2.2.19/
+video_player_android=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_android-2.3.0/
+video_player_avfoundation=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_avfoundation-2.3.0/
+video_player_web=/Users/wangcheng/development/flutter/.pub-cache/hosted/pub.dartlang.org/video_player_web-2.0.7/

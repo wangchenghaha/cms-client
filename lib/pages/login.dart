@@ -247,27 +247,23 @@ class _LoginPageState extends State<LoginPage> {
                                 color: const Color.fromRGBO(255, 255, 255, 1),
                               ),
                               padding: const EdgeInsets.all(10),
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: const [
-                                      Expanded(
-                                        child: Text(
-                                          '登录',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              color: Color.fromRGBO(
-                                                  157,
-                                                  119,
-                                                  255,
-                                                  1), // rgba(157, 119, 255, 1)
-                                              fontSize: 18,
-                                              fontFamily:
-                                                  'PingFangSC-Medium'),
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                              child: Row(
+                                children: const [
+                                  Expanded(
+                                    child: Text(
+                                      '登录',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(
+                                              157,
+                                              119,
+                                              255,
+                                              1), // rgba(157, 119, 255, 1)
+                                          fontSize: 18,
+                                          fontFamily:
+                                              'PingFangSC-Medium'),
+                                    ),
+                                  )
                                 ],
                               )),
                           onTap: () {
