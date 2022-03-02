@@ -1,7 +1,9 @@
+import 'package:cms_client/models/daren.dart';
 import 'package:cms_client/router.dart';
 import 'package:cms_client/widgets/CommonFloatingButton.dart';
 import 'package:cms_client/widgets/commom_image_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ApplicationSubmitPage extends StatefulWidget {
   const ApplicationSubmitPage({Key? key}) : super(key: key);
@@ -80,27 +82,6 @@ class _ApplicationSubmitPageState extends State<ApplicationSubmitPage> {
               ],
             ),
           ),
-          // Positioned(
-          //   bottom: 60,
-          //   left: 20,
-          //   right: 20,
-          //   child: GestureDetector(
-          //     onTap: (){
-          //       _submit();
-          //     },
-          //     child: Container(
-          //       padding: EdgeInsets.all(10),
-          //         decoration: BoxDecoration(
-          //             borderRadius: BorderRadius.circular(20),
-          //             color: Colors.blue),
-          //             alignment: Alignment.center,
-          //         child: Expanded(
-          //           child: Text(
-          //             '提交',
-          //             style: TextStyle(color: Colors.white,fontSize: 16),
-          //           ),
-          //         )),
-          //   ))
         ],
       ),
     );
@@ -108,6 +89,7 @@ class _ApplicationSubmitPageState extends State<ApplicationSubmitPage> {
 
   Function nullFun = () => {};
   _submit() async {
+    context.read<DarenModel>().changeToDaren();
     Navigator.pushNamed(context, Routes.applicationSubmitSuccess);
   }
 }

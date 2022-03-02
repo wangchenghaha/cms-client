@@ -15,13 +15,13 @@ class CommonImagePicker extends StatefulWidget {
 }
 
 class _CommonImagePickerState extends State<CommonImagePicker> {
-  var _imgPath;
+  var _imageFile;
 
   @override
   Widget build(BuildContext context) {
     var ImageWidth = (MediaQuery.of(context).size.width - 30.0) / 2;
     var ImageHeight = ImageWidth * 213 / 160;
-    if (_imgPath == null) {
+    if (_imageFile == null) {
       return Column(
         children: [
           GestureDetector(
@@ -61,38 +61,24 @@ class _CommonImagePickerState extends State<CommonImagePicker> {
         ],
       );
     } else {
-      return Container(
-        width: ImageWidth,
-        height: ImageHeight,
-        child: Image.file(
-          _imgPath,
-        ),
+      return Column(
+        children: [
+          Container(
+            width: ImageWidth,
+            height: ImageHeight,
+            child: Image.file(File(_imageFile.path)
+            ),
+          ),
+          Container(
+            width: ImageWidth,
+            padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+            alignment: Alignment.center,
+            child: Text(widget.Title),
+          )
+        ],
       );
     }
   }
-
-  // /*图片控件*/
-  // Widget _ImageView(imgPath) {
-  //   if (imgPath == null) {
-  //     return Center(
-  //       child: Text("请选择图片或拍照"),
-  //     );
-  //   } else {
-  //     return Image.file(
-  //       imgPath,
-  //     );
-  //   }
-  // }
-
-  /*拍照*/
-  // _takePhoto() async {
-  //   final ImagePicker _picker = ImagePicker();
-  //   // Pick an image
-  //   final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-  //   setState(() {
-  //     _imgPath = image;
-  //   });
-  // }
 
   /*相册*/
   _openGallery() async {
@@ -100,7 +86,7 @@ class _CommonImagePickerState extends State<CommonImagePicker> {
     // Pick an image
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     setState(() {
-      _imgPath = image;
+      _imageFile = image;
     });
   }
 }

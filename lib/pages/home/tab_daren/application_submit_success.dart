@@ -1,10 +1,18 @@
+import 'package:cms_client/models/home_select_index.dart';
 import 'package:cms_client/router.dart';
 import 'package:cms_client/widgets/CommonFloatingButton.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ApplicationSubmitSuccessPage extends StatelessWidget {
+
+class ApplicationSubmitSuccessPage extends StatefulWidget {
   const ApplicationSubmitSuccessPage({Key? key}) : super(key: key);
 
+  @override
+  State<ApplicationSubmitSuccessPage> createState() => _ApplicationSubmitSuccessPageState();
+}
+
+class _ApplicationSubmitSuccessPageState extends State<ApplicationSubmitSuccessPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,14 +49,16 @@ class ApplicationSubmitSuccessPage extends StatelessWidget {
               Padding(padding: EdgeInsets.only(top: 50)),
               CommonFloatingButton('返回首页', const Color.fromRGBO(158, 157, 255, 1),
               Colors.white, (){
-                _goHome(context);
+                _goHome();
               })
           ]
         ),
       ),
     );
   }
-  _goHome(context) async{
+
+  _goHome() async{
+    context.read<HomeSelectIndexModel>().changeHomeSelectIndex(2);
     Navigator.pushNamed(context, Routes.home);
   }
 }

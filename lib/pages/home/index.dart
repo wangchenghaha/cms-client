@@ -1,3 +1,4 @@
+import 'package:cms_client/models/home_select_index.dart';
 import 'package:cms_client/pages/home/tab_daren/index.dart';
 import 'package:cms_client/pages/home/tab_material/index.dart';
 import 'package:cms_client/pages/image.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:cms_client/pages/home/tab_todo/index.dart';
 import 'package:cms_client/pages/catalog.dart';
 import 'package:cms_client/pages/home/tab_profile/index.dart';
+import 'package:provider/provider.dart';
 
 List<Widget> tabViewList = [
   const TabIndex(),
@@ -35,7 +37,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -44,6 +46,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // setState(() {
+    //   var homeSelectIndex = context.read<HomeSelectIndexModel>().homeSelectIndex;
+    //   if(homeSelectIndex != 0){
+    //     _selectedIndex = context.read<HomeSelectIndexModel>().homeSelectIndex;
+    //   }
+    // });
     return Scaffold(
       body: tabViewList[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

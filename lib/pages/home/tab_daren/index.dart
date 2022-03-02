@@ -1,6 +1,8 @@
 
+import 'package:cms_client/models/daren.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import './application.dart';
 import './daren_index.dart';
 
@@ -12,7 +14,6 @@ class TabDaren extends StatefulWidget {
 }
 
 class _TabDarenState extends State<TabDaren> {
-  var isDaren = false;
 
   @override
   void initState() {
@@ -21,10 +22,12 @@ class _TabDarenState extends State<TabDaren> {
       [DeviceOrientation.portraitUp, 
       DeviceOrientation.portraitDown]
     );
+
   }
 
   @override
   Widget build(BuildContext context) {
+    var isDaren = context.read<DarenModel>().isDaren;
     if(isDaren){
       return DarenIndexPage();
     }else{

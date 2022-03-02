@@ -1,4 +1,6 @@
 import 'package:cms_client/models/cart.dart';
+import 'package:cms_client/models/daren.dart';
+import 'package:cms_client/models/home_select_index.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:cms_client/router.dart';
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
     );
     final MP = MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (ctx) => HomeSelectIndexModel()),
+        ChangeNotifierProvider(create: (ctx) => DarenModel()),
         Provider(create: (ctx) => CatalogModel()),
         ChangeNotifierProxyProvider<CatalogModel, CartModel>(
             create: (context) => CartModel(),
