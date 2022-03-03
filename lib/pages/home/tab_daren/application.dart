@@ -1,3 +1,4 @@
+import 'package:cms_client/generated/l10n.dart';
 import 'package:cms_client/router.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _ApplicationState extends State<Application> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('达人'),
+        title: Text(S.of(context).KOC),
       ),
       body: Container(
         padding: const EdgeInsets.fromLTRB(30, 50, 30, 20),
@@ -34,7 +35,7 @@ class _ApplicationState extends State<Application> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '申请成为达人',
+                    S.of(context).KOCApplication,
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                   )
                 ],

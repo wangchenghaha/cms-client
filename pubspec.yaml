@@ -32,7 +32,7 @@ dependencies:
 
   flutter_localizations: #多语言
     sdk: flutter
-  
+
   fluro: ^2.0.3
   dio: ^4.0.4
   fluttertoast: ^8.0.8
@@ -45,6 +45,7 @@ dependencies:
   image_picker: ^0.8.4+10
   video_player: ^2.2.19
   signature: ^5.0.0
+  shared_preferences: ^2.0.13
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +64,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # The following section is specific to Flutter.
 flutter:
   uses-material-design: true
@@ -73,10 +73,10 @@ flutter:
       fonts:
         - asset: fonts/Corben/Corben-Bold.ttf
           weight: 700
-    - family: Myfont    # 引入图标的别名，自定义
+    - family: Myfont # 引入图标的别名，自定义
       fonts:
         - asset: fonts/iconfont.ttf
-    - family: BottomNavfont    # 引入图标的别名，自定义
+    - family: BottomNavfont # 引入图标的别名，自定义
       fonts:
         - asset: fonts/iconfont2.ttf
 
@@ -104,4 +104,5 @@ flutter:
     - static/images/home_profile_wallet.png
     - static/images/loading.jpg
     - static/images/listItem.png
-
+flutter_intl:
+  enabled: true

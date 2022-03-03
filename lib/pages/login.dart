@@ -1,11 +1,14 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'dart:typed_data';
 
+import 'package:cms_client/generated/l10n.dart';
 import 'package:cms_client/utils/string_is_null_or_empty.dart';
 import 'package:cms_client/widgets/common_toast.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:cms_client/router.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -26,53 +29,14 @@ class _LoginPageState extends State<LoginPage> {
 
   late Uint8List bytes = Base64Decoder().convert(imgCode);
 
-  bool isEn = false;
+  bool _isEn = false;
 
-  _getCaptcha() async {
-    const url = "https://cms-test.bestseller.com.cn/stage-api/code";
-    var res = await Dio().get(url);
-    if (res.data['code'] == 200) {
-      setState(() {
-        // 将String转换成Uint8List格式
-        bytes = Base64Decoder().convert(res.data['img']);
-        uuid = res.data['uuid'];
-      });
-    }
-  }
-
-  _login() async {
-    const url = "https://cms-test.bestseller.com.cn/stage-api/auth/login";
-    var username = usernameController.text;
-    var password = passwordController.text;
-    var code = captchaController.text;
-    if (stringIsNullOrEmpty(username) || stringIsNullOrEmpty(password)) {
-      CommontToast.showToast('请输入用户名或密码！');
-      return;
-    }
-    if (stringIsNullOrEmpty(code)) {
-      CommontToast.showToast('请输入验证码！');
-      return;
-    }
-    var data = {
-      'username': username,
-      'password': password,
-      'uuid': uuid,
-      'code': code,
-      'clientId': clientId,
-      'version': "0.0.33"
-    };
-    var res = await Dio().post(url, data: data);
-    if (res.data['code'] == 200) {
-      Navigator.pushNamed(context, Routes.home);
-    } else {
-      CommontToast.showToast(res.data['msg']);
-    }
-  }
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   @override
   void initState() {
-    print('count initState');
     _getCaptcha();
+    _intLang();
   }
 
   @override
@@ -103,18 +67,16 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Switch(
-                      value: isEn,
+                      value: _isEn,
                       onChanged: (isChecked) {
                         setState(() {
-                          isEn = isChecked;
+                          print(isChecked);
+                          _isEn = isChecked;
                         });
+                        _setLang();
                       },
                       activeColor: Colors.white,
                       activeTrackColor: Colors.blue,
-                      // inactiveThumbColor: Colors.green,
-                      // inactiveTrackColor: Colors.orange,
-                      //activeThumbImage: AssetImage("images/app.png"),
-                      //inactiveThumbImage: AssetImage("images/app.png"),
                       materialTapTargetSize: MaterialTapTargetSize.padded,
                     ),
                   ],
@@ -298,5 +260,65 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  _getCaptcha() async {
+    const url = "https://cms-test.bestseller.com.cn/stage-api/code";
+    var res = await Dio().get(url);
+    if (res.data['code'] == 200) {
+      setState(() {
+        // 将String转换成Uint8List格式
+        bytes = Base64Decoder().convert(res.data['img']);
+        uuid = res.data['uuid'];
+      });
+    }
+  }
+
+  _login() async {
+    Navigator.pushNamed(context, Routes.home);
+    const url = "https://cms-test.bestseller.com.cn/stage-api/auth/login";
+    var username = usernameController.text;
+    var password = passwordController.text;
+    var code = captchaController.text;
+    if (stringIsNullOrEmpty(username) || stringIsNullOrEmpty(password)) {
+      CommontToast.showToast('请输入用户名或密码！');
+      return;
+    }
+    if (stringIsNullOrEmpty(code)) {
+      CommontToast.showToast('请输入验证码！');
+      return;
+    }
+    var data = {
+      'username': username,
+      'password': password,
+      'uuid': uuid,
+      'code': code,
+      'clientId': clientId,
+      'version': "0.0.33"
+    };
+    var res = await Dio().post(url, data: data);
+    if (res.data['code'] == 200) {
+      Navigator.pushNamed(context, Routes.home);
+    } else {
+      CommontToast.showToast(res.data['msg']);
+    }
+  }
+
+  _intLang() async {
+    final SharedPreferences prefs = await _prefs;
+    setState(() {
+      _isEn = prefs.getBool('isEn')!;
+    });
+  }
+
+  _setLang() async {
+    final SharedPreferences prefs = await _prefs;
+    if (_isEn) {
+      S.load(Locale('en', 'US'));
+      await prefs.setBool('isEn', true);
+    } else {
+      S.load(Locale('zh', 'CN'));
+      await prefs.setBool('isEn', false);
+    }
   }
 }
