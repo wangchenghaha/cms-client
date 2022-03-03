@@ -29,6 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  flutter_localizations: #多语言
+    sdk: flutter
+  
   fluro: ^2.0.3
   dio: ^4.0.4
   fluttertoast: ^8.0.8
@@ -77,6 +81,7 @@ flutter:
         - asset: fonts/iconfont2.ttf
 
   assets:
+    # 图片
     - assets/images/Rectangle.png
     - assets/images/loadbg.png
     - assets/images/valideCode.png

@@ -21,63 +21,58 @@ class _CommonImagePickerState extends State<CommonImagePicker> {
   Widget build(BuildContext context) {
     var ImageWidth = (MediaQuery.of(context).size.width - 30.0) / 2;
     var ImageHeight = ImageWidth * 213 / 160;
-    if (_imageFile == null) {
-      return Column(
-        children: [
-          GestureDetector(
-            onTap: () {
-              _openGallery();
-            },
-            child: Container(
-              color: Colors.black12,
-              width: ImageWidth,
-              height: ImageHeight,
-              child: ConstrainedBox(
-                constraints: const BoxConstraints.expand(),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: const [
-                    Positioned(
-                        child: Center(
-                      child: Icon(Icons.perm_identity,
-                          color: Colors.black12, size: 100,
-                          ),
-                    )),
-                    Positioned(
-                        child: Center(
-                      child: Icon(Icons.photo_camera,
-                          color: Colors.blue, size: 40),
-                    ))
-                  ],
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: () {
+            _openGallery();
+          },
+          child: _imageFile == null
+              ? Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Color.fromRGBO(
+                        242, 242, 247, 1), // rgb(242, 242, 247) 100%
+                  ),
+                  width: ImageWidth,
+                  height: ImageHeight,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints.expand(),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: const [
+                        Positioned(
+                            child: Center(
+                          child: const Icon(
+                              IconData(0xe70c, fontFamily: 'Myfont'),
+                              color: Color.fromRGBO(229, 230, 236, 1),
+                              size: 120),
+                        )),
+                        Positioned(
+                            child: Center(
+                          child: const Icon(
+                              IconData(0xe709, fontFamily: 'Myfont'),
+                              color: Colors.white, // rgb(167, 166, 253) 100%
+                              size: 60),
+                        ))
+                      ],
+                    ),
+                  ),
+                )
+              : Container(
+                  width: ImageWidth,
+                  height: ImageHeight,
+                  child: Image.file(File(_imageFile.path)),
                 ),
-              ),
-            )),
-          Container(
-            width: ImageWidth,
-            padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-            alignment: Alignment.center,
-            child: Text(widget.Title),
-          )
-        ],
-      );
-    } else {
-      return Column(
-        children: [
-          Container(
-            width: ImageWidth,
-            height: ImageHeight,
-            child: Image.file(File(_imageFile.path)
-            ),
-          ),
-          Container(
-            width: ImageWidth,
-            padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
-            alignment: Alignment.center,
-            child: Text(widget.Title),
-          )
-        ],
-      );
-    }
+        ),
+        Container(
+          width: ImageWidth,
+          padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
+          alignment: Alignment.center,
+          child: Text(widget.Title),
+        )
+      ],
+    );
   }
 
   /*相册*/

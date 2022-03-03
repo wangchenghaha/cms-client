@@ -22,10 +22,10 @@ class _ApplicationSubmitPageState extends State<ApplicationSubmitPage> {
         title: const Text('申请达人'),
       ),
       floatingActionButton: isActive
-          ? CommonFloatingButton('提交', const Color.fromRGBO(158, 157, 255, 1),
-              Colors.white, (){
-                _submit();
-              })
+          ? CommonFloatingButton(
+              '提交', const Color.fromRGBO(158, 157, 255, 1), Colors.white, () {
+              _submit();
+            })
           : CommonFloatingButton('提交', const Color.fromRGBO(179, 187, 196, 1),
               Colors.white, nullFun),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

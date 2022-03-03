@@ -17,7 +17,7 @@ class _TabDarenState extends State<TabDaren> {
 
   @override
   void initState() {
-    // 强制横屏
+    // 强制竖屏
     SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, 
       DeviceOrientation.portraitDown]
