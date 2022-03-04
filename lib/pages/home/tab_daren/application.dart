@@ -19,7 +19,7 @@ class _ApplicationState extends State<Application> {
         title: Text(S.of(context).KOC),
       ),
       body: Container(
-        padding: const EdgeInsets.fromLTRB(30, 50, 30, 20),
+        padding: const EdgeInsets.fromLTRB(10, 50, 10, 20),
         child: Column(
           children: [
             Row(
@@ -30,7 +30,7 @@ class _ApplicationState extends State<Application> {
               ],
             ),
             Container(
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.fromLTRB(5,20,5,5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -41,52 +41,57 @@ class _ApplicationState extends State<Application> {
                 ],
               ),
             ),
-            SizedBox(
+            Container(
+              padding: EdgeInsets.all(15),
+              alignment: Alignment.center,
               child: Column(
-                children: [
-                  Text('想拥有很多粉丝群体，且具有影响力吗？'),
-                  Text('快来申请成为达人吧！'),
-                ],
-              ),
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(S.of(context).ApplyMsg1,textAlign: TextAlign.center),
+                    Text(S.of(context).ApplyMsg2),
+                  ],
+                ),
             ),
             SizedBox(
               height: 120,
             ),
-            GestureDetector(
-              child: Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                        width: 1,
-                        color: const Color.fromRGBO(157, 119, 255, 1)),
-                    borderRadius: const BorderRadius.all(Radius.circular(30)),
-                    color: const Color.fromRGBO(157, 119, 255, 1),
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          '立即申请',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: const Color.fromRGBO(
-                                  255, 255, 255, 1), // rgba(157, 119, 255, 1)
-                              fontSize: 18,
-                              fontFamily: 'PingFangSC-Medium'),
+            Container(
+              padding: EdgeInsets.fromLTRB(10,0,10,0),
+              child: GestureDetector(
+                child: Container(
+                    padding: EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          width: 1,
+                          color: const Color.fromRGBO(157, 119, 255, 1)),
+                      borderRadius: const BorderRadius.all(Radius.circular(30)),
+                      color: const Color.fromRGBO(157, 119, 255, 1),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            S.of(context).Apply,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: const Color.fromRGBO(
+                                    255, 255, 255, 1), // rgba(157, 119, 255, 1)
+                                fontSize: 18,
+                                fontFamily: 'PingFangSC-Medium'),
+                          ),
                         ),
-                      ),
-                    ],
-                  )),
-              onTap: () {
-                _apply();
-              },
+                      ],
+                    )),
+                onTap: () {
+                  _apply();
+                },
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Checkbox(
                   checkColor: Colors.white,
-                  // fillColor: MaterialStateProperty.resolveWith(getColor),
                   value: isChecked,
                   onChanged: (bool? value) {
                     setState(() {
@@ -94,9 +99,9 @@ class _ApplicationState extends State<Application> {
                     });
                   },
                 ),
-                Text('我同意'),
+                Text(S.of(context).agree),
                 GestureDetector(
-                  child: Text('《绫致时装肖像使用协议》',style: TextStyle(
+                  child: Text(S.of(context).attorney,style: TextStyle(
                     decoration: TextDecoration.underline,
                   ),),
                   onTap: (){

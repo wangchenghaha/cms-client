@@ -79,6 +79,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Want to have a large number of fans and be influential?`
+  String get ApplyMsg1 {
+    return Intl.message(
+      'Want to have a large number of fans and be influential?',
+      name: 'ApplyMsg1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Come and apply to become an internal KOC! `
+  String get ApplyMsg2 {
+    return Intl.message(
+      'Come and apply to become an internal KOC! ',
+      name: 'ApplyMsg2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I agree`
+  String get agree {
+    return Intl.message(
+      'I agree',
+      name: 'agree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `《BESTSELLER Portait User Agreement》`
+  String get attorney {
+    return Intl.message(
+      '《BESTSELLER Portait User Agreement》',
+      name: 'attorney',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

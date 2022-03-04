@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 // Text(Translations.of(context).text('hello')),
-                const Icon(IconData(0xe707, fontFamily: 'Myfont'),
+                const Icon(IconData(0xe710, fontFamily: 'Myfont'),
                     color: Colors.white, size: 124),
                 const SizedBox(
                   height: 12,
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 5, 10, 0),
                               child: const Icon(
-                                  IconData(0xe706, fontFamily: 'Myfont'),
+                                  IconData(0xe70d, fontFamily: 'Myfont'),
                                   color: Colors.white,
                                   size: 20),
                             ),
@@ -147,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 5, 10, 0),
                               child: const Icon(
-                                  IconData(0xe704, fontFamily: 'Myfont'),
+                                  IconData(0xe70e, fontFamily: 'Myfont'),
                                   color: Colors.white,
                                   size: 20),
                             ),
@@ -180,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 5, 10, 0),
                               child: const Icon(
-                                  IconData(0xe705, fontFamily: 'Myfont'),
+                                  IconData(0xe70f, fontFamily: 'Myfont'),
                                   color: Colors.white,
                                   size: 20),
                             ),

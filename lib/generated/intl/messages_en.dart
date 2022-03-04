@@ -23,8 +23,15 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Apply": MessageLookupByLibrary.simpleMessage("APPLY"),
+        "ApplyMsg1": MessageLookupByLibrary.simpleMessage(
+            "Want to have a large number of fans and be influential?"),
+        "ApplyMsg2": MessageLookupByLibrary.simpleMessage(
+            "Come and apply to become an internal KOC! "),
         "KOC": MessageLookupByLibrary.simpleMessage("Internal KOC"),
         "KOCApplication":
-            MessageLookupByLibrary.simpleMessage("Internal KOC Application")
+            MessageLookupByLibrary.simpleMessage("Internal KOC Application"),
+        "agree": MessageLookupByLibrary.simpleMessage("I agree"),
+        "attorney": MessageLookupByLibrary.simpleMessage(
+            "《BESTSELLER Portait User Agreement》")
       };
 }

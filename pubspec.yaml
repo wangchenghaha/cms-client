@@ -69,16 +69,16 @@ flutter:
   uses-material-design: true
 
   fonts:
-    - family: Corben
-      fonts:
-        - asset: fonts/Corben/Corben-Bold.ttf
-          weight: 700
+    # - family: Corben
+    #   fonts:
+    #     - asset: fonts/Corben/Corben-Bold.ttf
+    #       weight: 700
     - family: Myfont # 引入图标的别名，自定义
       fonts:
         - asset: fonts/iconfont.ttf
-    - family: BottomNavfont # 引入图标的别名，自定义
-      fonts:
-        - asset: fonts/iconfont2.ttf
+    # - family: BottomNavfont # 引入图标的别名，自定义
+    #   fonts:
+    #     - asset: fonts/iconfont2.ttf
 
   assets:
     # 图片

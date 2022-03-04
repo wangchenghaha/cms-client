@@ -1,5 +1,9 @@
 {                      
   "KOC": "达人",
   "KOCApplication": "申请成为达人",
-  "Apply": "立即申请"
+  "Apply": "立即申请",
+  "ApplyMsg1": "想拥有很多粉丝群体，且具有影响力吗？",
+  "ApplyMsg2": "快来申请成为达人吧！",
+  "agree": "我同意",
+  "attorney": "《绫致时装肖像使用协议》"
 }
