@@ -136,6 +136,7 @@ class _TabProfileState extends State<TabProfile> {
       builder: (BuildContext context) {
         return SimpleDialog(
           title: const Text('切换语言'),
+          elevation: 0,
           children: <Widget>[
             new SimpleDialogOption(
               child: new Text('简体中文'),

@@ -19,11 +19,11 @@ List<Widget> tabViewList = [
 ];
 
 List<BottomNavigationBarItem> barItemList = [
-  const BottomNavigationBarItem(label: '待办', icon: Icon(Icons.list_alt_outlined)),
-  const BottomNavigationBarItem(label: '商品', icon: Icon(Icons.badge_outlined)),
-  const BottomNavigationBarItem(label: '达人', icon: Icon(Icons.diamond_rounded)),
-  const BottomNavigationBarItem(label: '素材库', icon: Icon(Icons.layers)),
-  const BottomNavigationBarItem(label: '我的', icon: Icon(Icons.account_circle)),
+  const BottomNavigationBarItem(label: '待办', icon: Icon(IconData(0xe617, fontFamily: 'Myfont'))), // 
+  const BottomNavigationBarItem(label: '商品', icon: Icon(IconData(0xe618, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(label: '达人', icon: Icon(IconData(0xe616, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(label: '素材库', icon: Icon(IconData(0xe61a, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(label: '我的', icon: Icon(IconData(0xe619, fontFamily: 'Myfont'))),
 ];
 
 class HomePage extends StatefulWidget {
