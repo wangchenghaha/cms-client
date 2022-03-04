@@ -20,6 +20,7 @@ class _ApplicationSubmitPageState extends State<ApplicationSubmitPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('申请达人'),
+        elevation: 1,
       ),
       floatingActionButton: isActive
           ? CommonFloatingButton(

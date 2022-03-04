@@ -8,7 +8,7 @@ class RoomDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('roomid: $roomId'),),
+      appBar: AppBar(title: Text('roomid: $roomId'),elevation: 1,),
     );
   }
 }

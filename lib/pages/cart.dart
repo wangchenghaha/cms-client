@@ -13,6 +13,7 @@ class Cart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('购物车'),
+        elevation: 0
       ),
       body: Column(
         children: [

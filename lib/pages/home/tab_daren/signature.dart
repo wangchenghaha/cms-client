@@ -37,6 +37,7 @@ class _signature extends State {
     return Scaffold(
       appBar: AppBar(
         title: Text('签名'),
+        elevation: 1,
       ),
       body: ListView(
         children: <Widget>[
@@ -66,6 +67,7 @@ class _signature extends State {
                             builder: (BuildContext context) {
                               return Scaffold(
                                 appBar: AppBar(
+                                  elevation: 1,
                                   actions: [
                                     IconButton(
                                       icon: const Icon(Icons.done_all),

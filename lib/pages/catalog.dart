@@ -83,6 +83,7 @@ class CataLog extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('商品列表'),
+        elevation: 1,
         actions: [
           IconButton(
               onPressed: () => Navigator.pushNamed(context, Routes.cart),

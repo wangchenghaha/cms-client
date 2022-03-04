@@ -11,6 +11,7 @@ class PowerAttorneyPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('协议'),
+        elevation: 1,
       ),
       body: Stack(
         children: [

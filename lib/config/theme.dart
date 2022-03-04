@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 final appTheme = ThemeData(
-  primarySwatch: createMaterialColor(const Color(0xFF8684FF)), // #8684FF 100%
+
+  primarySwatch: createMaterialColor( Colors.white), // #8684FF 100%
+  // primarySwatch: createMaterialColor(const Color(0xFF8684FF)), // #8684FF 100%
   textTheme: const TextTheme(
     headline1: TextStyle(
       fontFamily: 'PingFangSC-Medium',

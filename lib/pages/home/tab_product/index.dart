@@ -12,7 +12,7 @@ class _TabProductState extends State<TabProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('商品'),),
+      appBar: AppBar(title: const Text('商品'),elevation: 1,),
       body: const Text('这是商品！'),
     );
   }

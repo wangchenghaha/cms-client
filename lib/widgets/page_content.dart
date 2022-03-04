@@ -12,7 +12,7 @@ class PageContent extends StatelessWidget {
     final ButtonStyle style =
         ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Scaffold(
-      appBar: AppBar(title: Text('当前页面：$name'),),
+      appBar: AppBar(title: Text('当前页面：$name'),elevation: 1,),
       body: ListView(children: <Widget>[
           ElevatedButton(
             style: style,

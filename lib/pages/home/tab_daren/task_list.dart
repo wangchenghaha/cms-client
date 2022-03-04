@@ -8,7 +8,7 @@ class TaskListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('任务列表'),),
+      appBar: AppBar(title: Text('任务列表'),elevation: 1,),
       body: ListView(
         padding: EdgeInsets.all(15),
         children: [

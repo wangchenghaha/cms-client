@@ -1,4 +1,6 @@
+import 'package:cms_client/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class TabProfile extends StatefulWidget {
   const TabProfile({Key? key}) : super(key: key);
@@ -12,11 +14,15 @@ class _TabProfileState extends State<TabProfile> {
     color: Color.fromRGBO(56, 56, 116, 1),
     fontSize: 12,
   );
+
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('我的'),
+          elevation: 1,
         ),
         body: Stack(
           children: [
@@ -113,8 +119,18 @@ class _TabProfileState extends State<TabProfile> {
           ],
         ));
   }
-
-  _showLangDialog() {
+  _setLang(val) async {
+    final SharedPreferences prefs = await _prefs;
+    if(val == 0){
+      S.load(Locale('zh', 'CN'));
+      await prefs.setBool('isEn', false);
+    }else{
+      S.load(Locale('en', 'US'));
+      await prefs.setBool('isEn', true);
+    }
+    Navigator.pop(context);
+  }
+  _showLangDialog() async {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -124,13 +140,13 @@ class _TabProfileState extends State<TabProfile> {
             new SimpleDialogOption(
               child: new Text('简体中文'),
               onPressed: () {
-                print('1');
+                _setLang(0);
               },
             ),
             new SimpleDialogOption(
               child: new Text('English'),
               onPressed: () {
-                print('2');
+                _setLang(1);
               },
             ),
           ],
@@ -139,6 +155,14 @@ class _TabProfileState extends State<TabProfile> {
     );
   }
 }
+
+    // if (_isEn) {
+    //   S.load(Locale('en', 'US'));
+    //   await prefs.setBool('isEn', true);
+    // } else {
+    //   S.load(Locale('zh', 'CN'));
+    //   await prefs.setBool('isEn', false);
+    // }
 
 class CommonRow extends StatelessWidget {
   TextStyle _textStyle = TextStyle(

@@ -9,6 +9,7 @@ class DarenIndexPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('达人'),
+        elevation: 0
       ),
       body: ListView(
         padding: EdgeInsets.fromLTRB(20, 30, 20, 20),

@@ -17,6 +17,7 @@ class _ApplicationState extends State<Application> {
     return Scaffold(
       appBar: AppBar(
         title: Text(S.of(context).KOC),
+        elevation: 1,
       ),
       body: Container(
         padding: const EdgeInsets.fromLTRB(10, 50, 10, 20),
