@@ -9,9 +9,7 @@ class TabIndex extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [TodoList()]
-        ),
+        child: const TodoList()
       ),
     );
   }

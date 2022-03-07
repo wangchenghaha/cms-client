@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import './dataList.dart';
-
-
 class TodoListItemWidget extends StatelessWidget {
-  final DataListItemData data;
+  final data;
   const TodoListItemWidget(this.data, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -25,7 +22,7 @@ class TodoListItemWidget extends StatelessWidget {
               const Icon(IconData(0xe706, fontFamily: 'Myfont'),
                   color: Colors.white, size: 18),
               Text(
-                data.productStepNameCn,
+                data['productStepNameCn'],
                 style: const TextStyle(fontSize: 18, color: Colors.white),
               ),
             ],
@@ -36,7 +33,7 @@ class TodoListItemWidget extends StatelessWidget {
             // margin: const EdgeInsets.only(top: -10),
             children: [
               Text(
-                '${data.number}',
+                "${data['number']}",
                 style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
