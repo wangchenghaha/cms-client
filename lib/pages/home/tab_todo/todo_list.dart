@@ -35,7 +35,7 @@ class _TodoListState extends State<TodoList> {
 
   @override
   Widget build(BuildContext context) {
-    if (_todoDataList.length != 0) {
+    if (_todoDataList.length == 0) {
       return Center(
         child: Container(
           width: MediaQuery.of(context).size.width - 200,
