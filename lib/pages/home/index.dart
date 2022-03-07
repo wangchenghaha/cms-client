@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:cms_client/pages/home/tab_todo/index.dart';
 import 'package:cms_client/pages/catalog.dart';
 import 'package:cms_client/pages/home/tab_profile/index.dart';
-import 'package:provider/provider.dart';
 
 List<Widget> tabViewList = [
   const TabIndex(),
