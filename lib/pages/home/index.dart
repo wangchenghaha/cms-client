@@ -1,6 +1,6 @@
 import 'package:cms_client/pages/home/tab_daren/index.dart';
 import 'package:cms_client/pages/home/tab_material/index.dart';
-// import 'package:cms_client/pages/home/tab_product/index.dart';
+import 'package:cms_client/pages/home/tab_product/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cms_client/pages/home/tab_todo/index.dart';
 import 'package:cms_client/pages/catalog.dart';
@@ -8,9 +8,9 @@ import 'package:cms_client/pages/home/tab_profile/index.dart';
 
 List<Widget> tabViewList = [
   const TabIndex(),
-  const CataLog(),
+  // const CataLog(),
 
-  // const TabProduct(),
+  const TabProduct(),
   const TabDaren(),
 
   const TabMaterial(),
@@ -33,7 +33,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

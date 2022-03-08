@@ -26,10 +26,11 @@ class _signature extends State {
     super.initState();
     _controller.addListener(() => print('Value changed'));
     // 强制横屏
-   SystemChrome.setPreferredOrientations([
-     DeviceOrientation.landscapeLeft,
-     DeviceOrientation.landscapeRight
-   ]);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight
+    ]);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   }
 
   @override
@@ -44,7 +45,7 @@ class _signature extends State {
           //SIGNATURE CANVAS
           Signature(
             controller: _controller,
-            height: 300,
+            height: MediaQuery.of(context).size.height - 100,
             backgroundColor: Colors.white,
           ),
           //OK AND CLEAR BUTTONS

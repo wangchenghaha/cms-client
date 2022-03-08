@@ -17,7 +17,7 @@ class _TodoListState extends State<TodoList> {
         'https://cms-test.bestseller.com.cn/stage-api/product/product/stepNumber';
     Map<String, dynamic> headers = new Map();
     headers['Cookie'] =
-        'bsadmin-lang=zh-CN; bsadmin-token=5228a123-5e7f-446c-8395-4f2cc25341f2; bsadmin-uuid=DA00337827';
+        'bsadmin-lang=zh-CN; bsadmin-token=e15896e3-386d-4351-8fa3-d7c791fe518e; bsadmin-uuid=DA00337827';
     Options options = Options(headers: headers);
     var res = await Dio().get(url, options: options);
     if (res.data['code'] == 200) {
