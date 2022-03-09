@@ -38,6 +38,10 @@ class _ApplicationState extends State<Application> {
                   Text(
                     S.of(context).KOCApplication,
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                  ),
+                                   Text(
+                    S.of(context).KOCApplication,
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                   )
                 ],
               ),

@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "KOC": MessageLookupByLibrary.simpleMessage("达人"),
         "KOCApplication": MessageLookupByLibrary.simpleMessage("申请成为达人"),
         "agree": MessageLookupByLibrary.simpleMessage("我同意"),
-        "attorney": MessageLookupByLibrary.simpleMessage("《绫致时装肖像使用协议》")
+        "attorney": MessageLookupByLibrary.simpleMessage("《绫致时装肖像使用协议》"),
+        "attorney2": MessageLookupByLibrary.simpleMessage("《绫致时装肖像使用协议》2")
       };
 }

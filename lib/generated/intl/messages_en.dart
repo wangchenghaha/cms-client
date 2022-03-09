@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Internal KOC Application"),
         "agree": MessageLookupByLibrary.simpleMessage("I agree"),
         "attorney": MessageLookupByLibrary.simpleMessage(
-            "《BESTSELLER Portait User Agreement》")
+            "《BESTSELLER Portait User Agreement》"),
+        "attorney2": MessageLookupByLibrary.simpleMessage(
+            "《BESTSELLER Portait User Agreement》2")
       };
 }

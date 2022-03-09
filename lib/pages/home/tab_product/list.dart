@@ -23,7 +23,6 @@ class _ListState extends State<GoodsList> {
         'bsadmin-lang=zh-CN; bsadmin-token=cb539f52-490a-4ba0-b0ab-541edfabae57; bsadmin-uuid=DA00337827';
     Options options = Options(headers: headers);
     var res = await Dio().get(url, options: options);
-    print(res.data['data']['records']);
     if (res.data['code'] == 200) {
       setState(() {
         dataList..addAll(res.data['data']['records'].toList());

@@ -119,6 +119,16 @@ class S {
       args: [],
     );
   }
+
+  /// `《BESTSELLER Portait User Agreement》2`
+  String get attorney2 {
+    return Intl.message(
+      '《BESTSELLER Portait User Agreement》2',
+      name: 'attorney2',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

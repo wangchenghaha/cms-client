@@ -81,7 +81,7 @@ flutter:
     - assets/images/avatar.jpeg
     - assets/images/noSearchData.png
     - assets/images/noTodoData.png
-
+    - assets/images/notFound.jpeg
     - static/images/listItem.png
 flutter_intl:
   enabled: true

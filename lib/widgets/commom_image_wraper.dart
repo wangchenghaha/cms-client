@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 
 Widget CommonImageWrapper(String imageUrl) {
   return CachedNetworkImage(
-    imageUrl: imageUrl,
-    placeholder: (context, url) => Image.asset('assets/images/noTodoData.png',fit: BoxFit.contain),
-    errorWidget: (context, url, error) =>
-        Image.asset('assets/images/noSearchData.png',fit: BoxFit.contain), // assets/images/noSearchData.png
-  );
+      imageUrl: imageUrl,
+      placeholder: (context, url) => Container(
+            decoration: const BoxDecoration(color: Colors.black26),
+          ),
+      errorWidget: (context, url, error) =>
+          Image.asset('assets/images/notFound.jpeg',fit: BoxFit.contain),
+          );
 }

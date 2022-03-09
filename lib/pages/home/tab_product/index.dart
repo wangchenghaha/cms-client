@@ -2,7 +2,6 @@ import 'package:cms_client/pages/home/tab_product/list.dart';
 import 'package:flutter/material.dart';
 
 import 'FilterDrawer.dart';
-import 'search_bar.dart';
 
 class TabProduct extends StatefulWidget {
   const TabProduct({Key? key}) : super(key: key);
@@ -16,10 +15,7 @@ class _TabProductState extends State<TabProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: SearchBar(onSearch: () {
-          Navigator.of(context).pushNamed('search'); //跳转到搜索页面
-          print("跳转到搜索页面测试");
-        }),
+        title: Text('商品'),
         elevation: 1,
         actions: [
           Builder(
@@ -34,6 +30,9 @@ class _TabProductState extends State<TabProduct> {
       endDrawer: FilterDrawer(),
       body: Container(
         padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.grey[200]
+        ),
         child: GoodsList(),
       ),
     );
