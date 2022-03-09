@@ -1,3 +1,4 @@
+import 'package:cms_client/pages/home/tab_product/list.dart';
 import 'package:flutter/material.dart';
 
 import 'FilterDrawer.dart';
@@ -31,7 +32,10 @@ class _TabProductState extends State<TabProduct> {
         ],
       ),
       endDrawer: FilterDrawer(),
-      body: const Text('这是商品！'),
+      body: Container(
+        padding: EdgeInsets.all(20),
+        child: GoodsList(),
+      ),
     );
   }
 }
