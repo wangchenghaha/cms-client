@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
+import 'base_info/index.dart';
+
 class GoodsDetailPage extends StatefulWidget {
   final String styleColorCode;
 
@@ -31,6 +33,8 @@ class _GoodsDetailPageState extends State<GoodsDetailPage> {
           title: Text('商品详情'),
           bottom: TabBar(
             isScrollable: true,
+            // indicator: ColorTabIndicator(Colors.black),//选中标签颜色
+            indicatorColor: Colors.black,
             tabs: topTabsList.map((e) => Tab(
               child: Container(
                 child: Text( e['remark']),
@@ -41,9 +45,7 @@ class _GoodsDetailPageState extends State<GoodsDetailPage> {
         ),
         body: TabBarView(
           children: topTabsList
-              .map((e) => Center(
-                    child: Text(e['remark']),
-                  ))
+              .map((e) => DetailContent(remark:e['remark'],))
               .toList(),
         ),
       ),
@@ -67,5 +69,23 @@ class _GoodsDetailPageState extends State<GoodsDetailPage> {
             res.data['data']['product_content_production_step'].toList();
       });
     } else {}
+  }
+}
+
+class DetailContent extends StatelessWidget {
+  final String remark;
+
+  const DetailContent({Key? key, required this.remark}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    switch (remark) {
+      case '基本信息':
+        return BaseInfo();
+      default:
+        return Container(
+          child: Text('default'),
+        );
+    }
   }
 }
