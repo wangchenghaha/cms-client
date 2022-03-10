@@ -19,8 +19,7 @@ class _ListState extends State<GoodsList> {
     var url =
         'https://cms-test.bestseller.com.cn/stage-api/product/product/queryList?style=&styleName=&productYearId=&productSeasonId=&brand=&categoryGroupName=&batchTag=&current=${current}&size=10';
     Map<String, dynamic> headers = new Map();
-    headers['Cookie'] =
-        'bsadmin-lang=zh-CN; bsadmin-uuid=DA00337827; bsadmin-token=07abdcc8-3f0a-47b8-ba4f-056e1b440f97';
+    headers['Cookie'] = 'bsadmin-lang=zh-CN; bsadmin-uuid=DA00337827; bsadmin-token=07abdcc8-3f0a-47b8-ba4f-056e1b440f97';
     Options options = Options(headers: headers);
     var res = await Dio().get(url, options: options);
     if (res.data['code'] == 200) {

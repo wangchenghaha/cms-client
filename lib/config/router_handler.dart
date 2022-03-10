@@ -1,5 +1,6 @@
 
 import 'package:cms_client/pages/catalog.dart';
+import 'package:cms_client/pages/home/tab_goods/detail/index.dart';
 import 'package:cms_client/pages/roomDetail.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,8 @@ import 'package:cms_client/pages/home/tab_daren/application_submit.dart';
 import 'package:cms_client/pages/home/tab_daren/application_submit_success.dart';
 import 'package:cms_client/pages/home/tab_daren/task_list.dart';
 import 'package:cms_client/pages/home/tab_daren/signature.dart';
+
+// 商品
 
 
  
@@ -64,4 +67,10 @@ Handler TaskListHandler = Handler(
 Handler SignatureHandler = Handler(
   handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
     return SignaturePage();
+});
+
+// 商品
+Handler GoodsDetailHandler = Handler(
+  handlerFunc: (BuildContext? context, Map<String, dynamic> params) {
+    return GoodsDetailPage(styleColorCode: params['styleColorCode'][0],);
 });

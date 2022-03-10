@@ -18,7 +18,7 @@ List<Widget> tabViewList = [
 ];
 
 List<BottomNavigationBarItem> barItemList = [
-  const BottomNavigationBarItem(label: '待办', icon: Icon(IconData(0xe617, fontFamily: 'Myfont'))), // 
+  const BottomNavigationBarItem(label: '待办', icon: Icon(IconData(0xe617, fontFamily: 'Myfont'))), 
   const BottomNavigationBarItem(label: '商品', icon: Icon(IconData(0xe618, fontFamily: 'Myfont'))),
   const BottomNavigationBarItem(label: '达人', icon: Icon(IconData(0xe616, fontFamily: 'Myfont'))),
   const BottomNavigationBarItem(label: '素材库', icon: Icon(IconData(0xe61a, fontFamily: 'Myfont'))),

@@ -17,6 +17,8 @@ class Routes {
   static String applicationSubmitSuccess = '/pages/home/tab_daren/application_submit_success';
   static String taskList = '/task_list';
   static String signature = '/signature';
+  // 商品
+  static String goodsDetail = '/goodsDetail/:styleColorCode';
 
   // 编写函数 configureRoutes 关联路由名称和处理函数
   static void configureRoutes(FluroRouter router) {
@@ -29,6 +31,7 @@ class Routes {
     router.define(applicationSubmitSuccess, handler: ApplicationSubmitSuccessHandler);
     router.define(taskList, handler: TaskListHandler);
     router.define(signature, handler: SignatureHandler);
+    router.define(goodsDetail, handler: GoodsDetailHandler);
     router.notFoundHandler = NotFoundHandler;
   }
 }

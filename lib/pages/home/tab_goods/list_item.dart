@@ -11,32 +11,35 @@ class GoodsListItem extends StatelessWidget {
     var width = (MediaQuery.of(context).size.width - 50) / 2;
     var height = (MediaQuery.of(context).size.width - 50) / 2;
 
-    return Container(
-      width: width,
-      decoration: BoxDecoration(color: Colors.white),
-      child: Column(
-        children: [
-          Container(
-            height: height,
-            child: CommonImageWrapper(data['picturePath']),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.only(bottom: 10),
-                child: Text(
-                  data['styleColorCode'],
-                  style: TextStyle(
-                      color: Color.fromRGBO(56, 56, 116, 1), fontSize: 16),
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, "/goodsDetail/${data['styleColorCode']}"),
+      child: Container(
+        width: width,
+        decoration: BoxDecoration(color: Colors.white),
+        child: Column(
+          children: [
+            Container(
+              height: height,
+              child: CommonImageWrapper(data['picturePath']),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    data['styleColorCode'],
+                    style: TextStyle(
+                        color: Color.fromRGBO(56, 56, 116, 1), fontSize: 16),
+                  ),
                 ),
-              ),
-              CommonTextLine(data['styleColorCode']),
-              CommonTextLine(data['categoryGroupName']),
-              CommonTextLine(data['colorDetail']),
-            ],
-          ),
-        ],
+                CommonTextLine(data['styleColorCode']),
+                CommonTextLine(data['categoryGroupName']),
+                CommonTextLine(data['colorDetail']),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

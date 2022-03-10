@@ -110,15 +110,6 @@ class _SearchBarState extends State<SearchBar> {
                   )),
             ),
           )),
-          // if (widget.onCancel != null)
-          //   Padding(
-          //       padding: EdgeInsets.only(right: 10.0),
-          //       child: GestureDetector(
-          //           onTap: () {},
-          //           child: Row(children: <Widget>[
-          //             Text('取消',
-          //                 style: TextStyle(color: Colors.black, fontSize: 14.0))
-          //           ]))),
         ],
       ),
     );
