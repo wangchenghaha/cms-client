@@ -21,12 +21,31 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+// 测试环境
+// --dart-define=DART_DEFINE_APP_NAME=CMS(Testing) --dart-define=DART_DEFINE_APP_ID_SUFFIX=.testing
+// 生产环境
+// --dart-define=DART_DEFINE_APP_NAME=CMS
+def dartEnvironmentVariables = [
+        DART_DEFINE_APP_NAME             : 'CMS(Testing)',
+        DART_DEFINE_APP_ID_SUFFIX: '.testing',
+];
+
+if (project.hasProperty('dart-defines')) {
+    dartEnvironmentVariables = dartEnvironmentVariables + project.property('dart-defines')
+            .split(',')
+            .collectEntries { entry ->
+                def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
+                [(pair.first()): pair.last()]
+            }
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion flutter.compileSdkVersion
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -40,20 +59,32 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
+    signingConfigs {
+        release {
+            keyAlias 'bestseller'
+            keyPassword "bait123"
+            storeFile file('./bestseller.jks')
+            storePassword "bait123"
+        }
+    }
+
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.cms_client"
+        applicationId 'cn.com.bestseller.cms'
+        applicationIdSuffix dartEnvironmentVariables.DART_DEFINE_APP_ID_SUFFIX
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+
+        // 应用名
+        resValue("string", "app_name", dartEnvironmentVariables.DART_DEFINE_APP_NAME)
     }
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
+            // Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 }

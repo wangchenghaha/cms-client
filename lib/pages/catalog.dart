@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:cms_client/models/cart.dart';
-import 'package:cms_client/models/catalog.dart';
+import 'package:cms/models/cart.dart';
+import 'package:cms/models/catalog.dart';
 import 'package:provider/provider.dart';
-import 'package:cms_client/router.dart'; 
-
+import 'package:cms/router.dart';
 
 class _AddButton extends StatelessWidget {
   final Book book;
@@ -15,18 +14,18 @@ class _AddButton extends StatelessWidget {
       return cart.books.contains(book);
     });
     return TextButton(
-      onPressed: () => {
-            if (isInCart)
-              {context.read<CartModel>().remove(book)}
-            else
-              {context.read<CartModel>().add(book)}
-          },
-      child: isInCart
-          ? const Icon(Icons.check)
-          : const Icon(
-              Icons.add_shopping_cart,
-              color: Colors.orangeAccent,
-            ));
+        onPressed: () => {
+              if (isInCart)
+                {context.read<CartModel>().remove(book)}
+              else
+                {context.read<CartModel>().add(book)}
+            },
+        child: isInCart
+            ? const Icon(Icons.check)
+            : const Icon(
+                Icons.add_shopping_cart,
+                color: Colors.orangeAccent,
+              ));
   }
 }
 
@@ -36,7 +35,8 @@ class _ListItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Book book = context.select<CatalogModel, Book>((value) => value.getByPosition(index));
+    Book book = context
+        .select<CatalogModel, Book>((value) => value.getByPosition(index));
 
     return Padding(
       padding: const EdgeInsets.all(5),

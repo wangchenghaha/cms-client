@@ -1,5 +1,5 @@
-import 'package:cms_client/router.dart';
-import 'package:cms_client/widgets/common_text.dart';
+import 'package:cms/router.dart';
+import 'package:cms/widgets/common_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +69,7 @@ class PowerAttorneyPage extends StatelessWidget {
               left: 20,
               right: 20,
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.pushNamed(context, Routes.signature);
                 },
                 child: Container(
@@ -78,10 +78,10 @@ class PowerAttorneyPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     color: Color.fromRGBO(157, 119, 255, 1),
                   ),
-                  child: Text('签名',style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16
-                  ),),
+                  child: Text(
+                    '签名',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
                 ),
               ))
         ],

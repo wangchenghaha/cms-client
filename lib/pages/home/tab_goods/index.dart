@@ -1,4 +1,4 @@
-import 'package:cms_client/pages/home/tab_goods/list.dart';
+import 'package:cms/pages/home/tab_goods/list.dart';
 import 'package:flutter/material.dart';
 
 import 'FilterDrawer.dart';
@@ -30,9 +30,7 @@ class _TabGoodsState extends State<TabGoods> {
       endDrawer: FilterDrawer(),
       body: Container(
         padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.grey[200]
-        ),
+        decoration: BoxDecoration(color: Colors.grey[200]),
         child: GoodsList(),
       ),
     );

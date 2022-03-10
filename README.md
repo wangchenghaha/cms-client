@@ -1,4 +1,4 @@
-# cms_client
+# cms
 
 A new Flutter project.
 

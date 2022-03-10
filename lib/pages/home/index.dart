@@ -1,10 +1,10 @@
-import 'package:cms_client/pages/home/tab_daren/index.dart';
-import 'package:cms_client/pages/home/tab_material/index.dart';
-import 'package:cms_client/pages/home/tab_goods/index.dart';
+import 'package:cms/pages/home/tab_daren/index.dart';
+import 'package:cms/pages/home/tab_material/index.dart';
+import 'package:cms/pages/home/tab_goods/index.dart';
 import 'package:flutter/material.dart';
-import 'package:cms_client/pages/home/tab_todo/index.dart';
-import 'package:cms_client/pages/catalog.dart';
-import 'package:cms_client/pages/home/tab_profile/index.dart';
+import 'package:cms/pages/home/tab_todo/index.dart';
+import 'package:cms/pages/catalog.dart';
+import 'package:cms/pages/home/tab_profile/index.dart';
 
 List<Widget> tabViewList = [
   const TabIndex(),
@@ -18,11 +18,16 @@ List<Widget> tabViewList = [
 ];
 
 List<BottomNavigationBarItem> barItemList = [
-  const BottomNavigationBarItem(label: '待办', icon: Icon(IconData(0xe617, fontFamily: 'Myfont'))), 
-  const BottomNavigationBarItem(label: '商品', icon: Icon(IconData(0xe618, fontFamily: 'Myfont'))),
-  const BottomNavigationBarItem(label: '达人', icon: Icon(IconData(0xe616, fontFamily: 'Myfont'))),
-  const BottomNavigationBarItem(label: '素材库', icon: Icon(IconData(0xe61a, fontFamily: 'Myfont'))),
-  const BottomNavigationBarItem(label: '我的', icon: Icon(IconData(0xe619, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(
+      label: '待办', icon: Icon(IconData(0xe617, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(
+      label: '商品', icon: Icon(IconData(0xe618, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(
+      label: '达人', icon: Icon(IconData(0xe616, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(
+      label: '素材库', icon: Icon(IconData(0xe61a, fontFamily: 'Myfont'))),
+  const BottomNavigationBarItem(
+      label: '我的', icon: Icon(IconData(0xe619, fontFamily: 'Myfont'))),
 ];
 
 class HomePage extends StatefulWidget {

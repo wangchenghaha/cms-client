@@ -1,11 +1,8 @@
-
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:fluro/fluro.dart';
-import 'package:cms_client/config/router_handler.dart'; 
-
+import 'package:cms/config/router_handler.dart';
 
 class Routes {
-
   // 定义路由名称
   static String home = '/';
   static String login = '/login';
@@ -14,7 +11,8 @@ class Routes {
   // 达人
   static String powerAttorney = '/pages/home/tab_daren/power_attorney';
   static String applicationSubmit = '/pages/home/tab_daren/application_submit';
-  static String applicationSubmitSuccess = '/pages/home/tab_daren/application_submit_success';
+  static String applicationSubmitSuccess =
+      '/pages/home/tab_daren/application_submit_success';
   static String taskList = '/task_list';
   static String signature = '/signature';
   // 商品
@@ -28,7 +26,8 @@ class Routes {
     router.define(cart, handler: CartHandler);
     router.define(powerAttorney, handler: PowerAttorneyHandler);
     router.define(applicationSubmit, handler: ApplicationSubmitHandler);
-    router.define(applicationSubmitSuccess, handler: ApplicationSubmitSuccessHandler);
+    router.define(applicationSubmitSuccess,
+        handler: ApplicationSubmitSuccessHandler);
     router.define(taskList, handler: TaskListHandler);
     router.define(signature, handler: SignatureHandler);
     router.define(goodsDetail, handler: GoodsDetailHandler);

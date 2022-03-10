@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(cms_client LANGUAGES CXX)
+project(cms LANGUAGES CXX)
 
-set(BINARY_NAME "cms_client")
+set(BINARY_NAME "cms")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:cms_client/router.dart';
+import 'package:cms/router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -26,10 +26,8 @@ class _signature extends State {
     super.initState();
     _controller.addListener(() => print('Value changed'));
     // 强制横屏
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight
-    ]);
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
   }
 
@@ -75,7 +73,8 @@ class _signature extends State {
                                       tooltip: 'Open shopping cart',
                                       onPressed: () {
                                         // handle the press
-                                        Navigator.pushNamed(context, Routes.home);
+                                        Navigator.pushNamed(
+                                            context, Routes.home);
                                       },
                                     ),
                                   ],
@@ -123,7 +122,8 @@ class _signature extends State {
       ),
     );
   }
-    @override
+
+  @override
   void dispose() {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cms_client/models/cart.dart';
+import 'package:cms/models/cart.dart';
 import 'package:provider/provider.dart';
 
 class Cart extends StatelessWidget {
@@ -11,10 +11,7 @@ class Cart extends StatelessWidget {
     var cart = context.watch<CartModel>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('购物车'),
-        elevation: 0
-      ),
+      appBar: AppBar(title: const Text('购物车'), elevation: 0),
       body: Column(
         children: [
           Expanded(
@@ -23,7 +20,10 @@ class Cart extends StatelessWidget {
                     title: Text(cart.books[index].name),
                     subtitle: Text("￥${cart.books[index].price.toString()}"),
                     trailing: IconButton(
-                      icon: const Icon(Icons.remove,color: Colors.red,),
+                      icon: const Icon(
+                        Icons.remove,
+                        color: Colors.red,
+                      ),
                       onPressed: () {
                         cart.remove(cart.books[index]);
                       },

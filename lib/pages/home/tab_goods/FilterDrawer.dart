@@ -1,4 +1,4 @@
-import 'package:cms_client/widgets/common_picker.dart';
+import 'package:cms/widgets/common_picker.dart';
 import 'package:flutter/material.dart';
 
 class FilterDrawer extends StatefulWidget {
@@ -19,112 +19,111 @@ class _FilterDrawerState extends State<FilterDrawer> {
     return Drawer(
       child: SafeArea(
           child: Stack(
-          children: [
-            Container(
-              padding: EdgeInsets.all(20),
-              child: ListView(
+        children: [
+          Container(
+            padding: EdgeInsets.all(20),
+            child: ListView(
+              children: [
+                DrawerTitle(
+                  title: '商品编号',
+                ),
+                DrawerInput(
+                    hitText: "请输入9或12位商品编码", controller: productCodeController),
+                DrawerTitle(
+                  title: '款名',
+                ),
+                DrawerInput(
+                    hitText: "请输入9或12位商品编码", controller: modelNameController),
+                DrawerTitle(
+                  title: '品牌',
+                ),
+                DrawerSelect(
+                  value: roomType,
+                  onChange: (val) {
+                    setState(() {
+                      roomType = val;
+                    });
+                  },
+                  options: ['ONLY', 'VERO MODA', 'JACK JONES', 'SELECTED'],
+                ),
+                DrawerTitle(
+                  title: '批次号',
+                ),
+                DrawerInput(
+                    hitText: "请输入9或12位商品编码", controller: batchController),
+                DrawerTitle(
+                  title: '品类组',
+                ),
+                DrawerSelect(
+                  value: roomType,
+                  onChange: (val) {
+                    setState(() {
+                      roomType = val;
+                    });
+                  },
+                  options: ['组一', '组二', '组三', '组四'],
+                ),
+                DrawerTitle(
+                  title: '品类组',
+                ),
+                DrawerSelect(
+                  value: roomType,
+                  onChange: (val) {
+                    setState(() {
+                      roomType = val;
+                    });
+                  },
+                  options: ['组一', '组二', '组三', '组四'],
+                ),
+                DrawerTitle(
+                  title: '年',
+                ),
+                DrawerSelect(
+                  value: roomType,
+                  onChange: (val) {
+                    setState(() {
+                      roomType = val;
+                    });
+                  },
+                  options: ['2022', '2021', '2020', '2019'],
+                ),
+                DrawerTitle(
+                  title: '季',
+                ),
+                DrawerSelect(
+                  value: roomType,
+                  onChange: (val) {
+                    setState(() {
+                      roomType = val;
+                    });
+                  },
+                  options: ['1', '2', '3', '4'],
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            bottom: 20,
+            left: 20,
+            right: 20,
+            child: Container(
+              height: 60,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  DrawerTitle(
-                    title: '商品编号',
+                  DrawerButton(
+                    label: '重置',
+                    onTap: () {},
                   ),
-                  DrawerInput(
-                      hitText: "请输入9或12位商品编码",
-                      controller: productCodeController),
-                  DrawerTitle(
-                    title: '款名',
-                  ),
-                  DrawerInput(
-                      hitText: "请输入9或12位商品编码", controller: modelNameController),
-                  DrawerTitle(
-                    title: '品牌',
-                  ),
-                  DrawerSelect(
-                    value: roomType,
-                    onChange: (val) {
-                      setState(() {
-                        roomType = val;
-                      });
-                    },
-                    options: ['ONLY', 'VERO MODA', 'JACK JONES', 'SELECTED'],
-                  ),
-                  DrawerTitle(
-                    title: '批次号',
-                  ),
-                  DrawerInput(
-                      hitText: "请输入9或12位商品编码", controller: batchController),
-                  DrawerTitle(
-                    title: '品类组',
-                  ),
-                  DrawerSelect(
-                    value: roomType,
-                    onChange: (val) {
-                      setState(() {
-                        roomType = val;
-                      });
-                    },
-                    options: ['组一', '组二', '组三', '组四'],
-                  ),
-                  DrawerTitle(
-                    title: '品类组',
-                  ),
-                  DrawerSelect(
-                    value: roomType,
-                    onChange: (val) {
-                      setState(() {
-                        roomType = val;
-                      });
-                    },
-                    options: ['组一', '组二', '组三', '组四'],
-                  ),
-                  DrawerTitle(
-                    title: '年',
-                  ),
-                  DrawerSelect(
-                    value: roomType,
-                    onChange: (val) {
-                      setState(() {
-                        roomType = val;
-                      });
-                    },
-                    options: ['2022', '2021', '2020', '2019'],
-                  ),
-                  DrawerTitle(
-                    title: '季',
-                  ),
-                  DrawerSelect(
-                    value: roomType,
-                    onChange: (val) {
-                      setState(() {
-                        roomType = val;
-                      });
-                    },
-                    options: ['1', '2', '3', '4'],
+                  DrawerButton(
+                    label: '确定',
+                    onTap: () {},
                   ),
                 ],
               ),
             ),
-            Positioned(
-              bottom: 20,
-              left: 20,
-              right: 20,
-              child: Container(
-                height: 60,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      DrawerButton(
-                        label: '重置',
-                        onTap: () {},
-                      ),
-                      DrawerButton(
-                        label: '确定',
-                        onTap: () {},
-                      ),
-                    ],
-                  ),
-                ),
-            ),
-          ],
+          ),
+        ],
       )),
     );
   }
@@ -224,8 +223,7 @@ class DrawerButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 4,
       height: 40,
       decoration: BoxDecoration(
-      color: bgColor,
-
+        color: bgColor,
         borderRadius: BorderRadius.circular(16),
         border:
             Border.all(width: 1, color: const Color.fromRGBO(157, 119, 255, 1)),

@@ -1,4 +1,4 @@
-import 'package:cms_client/widgets/commom_image_wraper.dart';
+import 'package:cms/widgets/commom_image_wraper.dart';
 import 'package:flutter/material.dart';
 
 class GoodsListItem extends StatelessWidget {
@@ -12,7 +12,8 @@ class GoodsListItem extends StatelessWidget {
     var height = (MediaQuery.of(context).size.width - 50) / 2;
 
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, "/goodsDetail/${data['styleColorCode']}"),
+      onTap: () => Navigator.pushNamed(
+          context, "/goodsDetail/${data['styleColorCode']}"),
       child: Container(
         width: width,
         decoration: BoxDecoration(color: Colors.white),

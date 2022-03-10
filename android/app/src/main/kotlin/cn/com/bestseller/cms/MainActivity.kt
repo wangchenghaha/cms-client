@@ -1,4 +1,4 @@
-package com.example.cms_client
+package cn.com.bestseller.cms
 
 import io.flutter.embedding.android.FlutterActivity
 

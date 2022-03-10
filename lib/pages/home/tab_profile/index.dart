@@ -1,4 +1,4 @@
-import 'package:cms_client/generated/l10n.dart';
+import 'package:cms/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -119,17 +119,19 @@ class _TabProfileState extends State<TabProfile> {
           ],
         ));
   }
+
   _setLang(val) async {
     final SharedPreferences prefs = await _prefs;
-    if(val == 0){
+    if (val == 0) {
       S.load(Locale('zh', 'CN'));
       await prefs.setBool('isEn', false);
-    }else{
+    } else {
       S.load(Locale('en', 'US'));
       await prefs.setBool('isEn', true);
     }
     Navigator.pop(context);
   }
+
   _showLangDialog() async {
     showDialog(
       context: context,
@@ -157,13 +159,13 @@ class _TabProfileState extends State<TabProfile> {
   }
 }
 
-    // if (_isEn) {
-    //   S.load(Locale('en', 'US'));
-    //   await prefs.setBool('isEn', true);
-    // } else {
-    //   S.load(Locale('zh', 'CN'));
-    //   await prefs.setBool('isEn', false);
-    // }
+// if (_isEn) {
+//   S.load(Locale('en', 'US'));
+//   await prefs.setBool('isEn', true);
+// } else {
+//   S.load(Locale('zh', 'CN'));
+//   await prefs.setBool('isEn', false);
+// }
 
 class CommonRow extends StatelessWidget {
   TextStyle _textStyle = TextStyle(

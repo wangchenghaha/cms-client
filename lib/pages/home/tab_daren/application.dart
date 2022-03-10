@@ -1,5 +1,5 @@
-import 'package:cms_client/generated/l10n.dart';
-import 'package:cms_client/router.dart';
+import 'package:cms/generated/l10n.dart';
+import 'package:cms/router.dart';
 import 'package:flutter/material.dart';
 
 class Application extends StatefulWidget {
@@ -31,7 +31,7 @@ class _ApplicationState extends State<Application> {
               ],
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(5,20,5,5),
+              padding: EdgeInsets.fromLTRB(5, 20, 5, 5),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -39,7 +39,7 @@ class _ApplicationState extends State<Application> {
                     S.of(context).KOCApplication,
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                   ),
-                                   Text(
+                  Text(
                     S.of(context).KOCApplication,
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                   )
@@ -50,18 +50,18 @@ class _ApplicationState extends State<Application> {
               padding: EdgeInsets.all(15),
               alignment: Alignment.center,
               child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(S.of(context).ApplyMsg1,textAlign: TextAlign.center),
-                    Text(S.of(context).ApplyMsg2),
-                  ],
-                ),
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(S.of(context).ApplyMsg1, textAlign: TextAlign.center),
+                  Text(S.of(context).ApplyMsg2),
+                ],
+              ),
             ),
             SizedBox(
               height: 120,
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(10,0,10,0),
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: GestureDetector(
                 child: Container(
                     padding: EdgeInsets.all(15),
@@ -106,10 +106,13 @@ class _ApplicationState extends State<Application> {
                 ),
                 Text(S.of(context).agree),
                 GestureDetector(
-                  child: Text(S.of(context).attorney,style: TextStyle(
-                    decoration: TextDecoration.underline,
-                  ),),
-                  onTap: (){
+                  child: Text(
+                    S.of(context).attorney,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  onTap: () {
                     _linkToAgreement();
                   },
                 )
@@ -120,6 +123,7 @@ class _ApplicationState extends State<Application> {
       ),
     );
   }
+
   void _apply() async {
     Navigator.pushNamed(context, Routes.applicationSubmit);
   }

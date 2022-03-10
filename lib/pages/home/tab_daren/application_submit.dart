@@ -1,7 +1,7 @@
-import 'package:cms_client/models/daren.dart';
-import 'package:cms_client/router.dart';
-import 'package:cms_client/widgets/CommonFloatingButton.dart';
-import 'package:cms_client/widgets/commom_image_picker.dart';
+import 'package:cms/models/daren.dart';
+import 'package:cms/router.dart';
+import 'package:cms/widgets/CommonFloatingButton.dart';
+import 'package:cms/widgets/commom_image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

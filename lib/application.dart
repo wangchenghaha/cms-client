@@ -1,15 +1,15 @@
-import 'package:cms_client/generated/l10n.dart';
-import 'package:cms_client/models/cart.dart';
-import 'package:cms_client/models/daren.dart';
-import 'package:cms_client/models/home_select_index.dart';
+import 'package:cms/generated/l10n.dart';
+import 'package:cms/models/cart.dart';
+import 'package:cms/models/daren.dart';
+import 'package:cms/models/home_select_index.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:cms_client/router.dart';
-import 'package:cms_client/config/application.dart';
-import 'package:cms_client/config/theme.dart';
+import 'package:cms/router.dart';
+import 'package:cms/config/application.dart';
+import 'package:cms/config/theme.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:cms_client/models/catalog.dart';
+import 'package:cms/models/catalog.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -36,14 +36,14 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (ctx) => DarenModel()),
         Provider(create: (ctx) => CatalogModel()),
         ChangeNotifierProxyProvider<CatalogModel, CartModel>(
-          create: (context) => CartModel(),
-          update: (context, catalog, cart) {
-            if (cart == null) {
-              throw (ArgumentError.notNull('cart'));
-            }
-            cart.catalog = catalog;
-            return cart;
-          })
+            create: (context) => CartModel(),
+            update: (context, catalog, cart) {
+              if (cart == null) {
+                throw (ArgumentError.notNull('cart'));
+              }
+              cart.catalog = catalog;
+              return cart;
+            })
       ],
       child: app,
     );

@@ -1,10 +1,8 @@
-
-import 'package:cms_client/widgets/page_content.dart';
+import 'package:cms/widgets/page_content.dart';
 import 'package:flutter/material.dart';
 
-
 class TabMaterial extends StatefulWidget {
-  const TabMaterial({ Key? key }) : super(key: key);
+  const TabMaterial({Key? key}) : super(key: key);
 
   @override
   _TabMaterialState createState() => _TabMaterialState();

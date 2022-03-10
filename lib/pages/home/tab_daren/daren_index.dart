@@ -1,4 +1,4 @@
-import 'package:cms_client/router.dart';
+import 'package:cms/router.dart';
 import 'package:flutter/material.dart';
 
 class DarenIndexPage extends StatelessWidget {
@@ -7,15 +7,12 @@ class DarenIndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('达人'),
-        elevation: 0
-      ),
+      appBar: AppBar(title: Text('达人'), elevation: 0),
       body: ListView(
         padding: EdgeInsets.fromLTRB(20, 30, 20, 20),
         children: [
           GestureDetector(
-            onTap: (){
+            onTap: () {
               Navigator.pushNamed(context, Routes.taskList);
             },
             child: Container(
