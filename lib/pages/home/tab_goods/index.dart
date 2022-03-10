@@ -1,16 +1,16 @@
-import 'package:cms_client/pages/home/tab_product/list.dart';
+import 'package:cms_client/pages/home/tab_goods/list.dart';
 import 'package:flutter/material.dart';
 
 import 'FilterDrawer.dart';
 
-class TabProduct extends StatefulWidget {
-  const TabProduct({Key? key}) : super(key: key);
+class TabGoods extends StatefulWidget {
+  const TabGoods({Key? key}) : super(key: key);
 
   @override
-  _TabProductState createState() => _TabProductState();
+  _TabGoodsState createState() => _TabGoodsState();
 }
 
-class _TabProductState extends State<TabProduct> {
+class _TabGoodsState extends State<TabGoods> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

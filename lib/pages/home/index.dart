@@ -1,6 +1,6 @@
 import 'package:cms_client/pages/home/tab_daren/index.dart';
 import 'package:cms_client/pages/home/tab_material/index.dart';
-import 'package:cms_client/pages/home/tab_product/index.dart';
+import 'package:cms_client/pages/home/tab_goods/index.dart';
 import 'package:flutter/material.dart';
 import 'package:cms_client/pages/home/tab_todo/index.dart';
 import 'package:cms_client/pages/catalog.dart';
@@ -10,7 +10,7 @@ List<Widget> tabViewList = [
   const TabIndex(),
   // const CataLog(),
 
-  const TabProduct(),
+  const TabGoods(),
   const TabDaren(),
 
   const TabMaterial(),

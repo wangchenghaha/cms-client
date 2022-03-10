@@ -20,7 +20,8 @@ class GoodsListItem extends StatelessWidget {
             height: height,
             child: CommonImageWrapper(data['picturePath']),
           ),
-          ListView(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 padding: EdgeInsets.only(bottom: 10),
